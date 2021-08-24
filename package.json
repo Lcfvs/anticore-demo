@@ -6,32 +6,26 @@
   "type": "module",
   "scripts": {
     "start": "npm run start:prod",
-    "start:dev": "run-p bundle:dev serve:dev",
-    "start:prod": "run-s bundle:prod serve:prod",
-    "serve:dev": "node src/serve.js --open",
-    "serve:prod": "node src/serve.js",
-    "bundle:dev": "node ./build.js --watch",
-    "bundle:prod": "node ./build.js"
+    "build:dev": "node ./build.js --watch",
+    "build:prod": "node ./build.js",
+    "start:dev": "node src/serve.js --open",
+    "start:prod": "node src/serve.js"
   },
   "dependencies": {
-    "@anticore-contracts/tree-insert": "^2.0.0",
-    "@anticore-contracts/tree-view": "^1.0.2",
-    "@lcf.vs/dom-engine": "^5.2.4",
+    "@anticore-contracts/tree-insert": "^2.0.4",
+    "@anticore-contracts/tree-view": "^1.0.5",
     "anticore": "^4.6.2",
     "anticore-server": "^0.10.1",
     "dotenv": "^10.0.0",
-    "fastify": "^3.20.2",
-    "fastify-multipart": "^4.0.7",
-    "fastify-static": "^4.2.3",
-    "npm-run-all": "^4.1.5"
+    "esbuild": "^0.12.22",
+    "open": "^8.2.1",
+    "install-peers-cli": "^2.2.0"
   },
   "engines": {
     "node": ">=14.x"
   },
   "devDependencies": {
-    "esbuild": "^0.12.21",
-    "eslint": "^7.28.0",
-    "open": "^8.2.0"
+    "eslint": "^7.28.0"
   },
   "author": "Lcf.vs",
   "license": "MIT"
