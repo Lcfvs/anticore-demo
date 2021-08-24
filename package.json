@@ -1,0 +1,38 @@
+{
+  "name": "anticore-demo",
+  "private": true,
+  "version": "1.0.3",
+  "description": "An anticore demo",
+  "type": "module",
+  "scripts": {
+    "start": "npm run start:prod",
+    "start:dev": "npm run bundle:dev && node src/serve.js --open",
+    "start:prod": "npm run bundle:prod && node src/serve.js",
+    "bundle:all": "npm run bundle:css && npm run bundle:js",
+    "bundle:dev": "npm run bundle:all -- -- --watch",
+    "bundle:prod": "npm run bundle:all -- -- --minify",
+    "bundle:css": "esbuild --bundle --outfile=src/assets/css/dist.css src/assets/css/style.css",
+    "bundle:js": "esbuild --bundle --format=esm --outfile=src/assets/js/dist.js src/assets/js/main.js"
+  },
+  "dependencies": {
+    "@anticore-contracts/tree-insert": "^2.0.0",
+    "@anticore-contracts/tree-view": "^1.0.2",
+    "@lcf.vs/dom-engine": "^5.2.4",
+    "anticore": "^4.6.2",
+    "anticore-server": "^0.10.1",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.20.2",
+    "fastify-multipart": "^4.0.7",
+    "fastify-static": "^4.2.3"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.21",
+    "eslint": "^7.28.0",
+    "open": "^8.2.0"
+  },
+  "author": "Lcf.vs",
+  "license": "MIT"
+}
