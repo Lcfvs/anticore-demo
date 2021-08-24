@@ -1,5 +1,5 @@
 import app from '../lib/app.js'
-import { view } from '../lib/renderer.js'
+import { view } from '../lib/responder.js'
 import form from '../templates/views/form/form.js'
 import congrats from '../templates/views/congrats/congrats.js'
 

@@ -1,5 +1,5 @@
 import app from '../lib/app.js'
-import { sse } from '../lib/renderer.js'
+import { sse } from '../lib/responder.js'
 import ping from '../templates/sse/ping/ping.js'
 
 const wait = async delay => new Promise(resolve => setTimeout(resolve, delay))

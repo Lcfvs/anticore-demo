@@ -1,24 +1,37 @@
+import { rollup } from 'rollup'
+import multi from '@rollup/plugin-multi-entry'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import postcss from 'rollup-plugin-postcss'
+import { terser } from 'rollup-plugin-terser'
 import { argv } from 'process'
-import { build } from 'esbuild'
 
-const dev = argv.includes('--watch')
+const dev = argv.includes('--open')
 
-await build({
-  entryPoints: {
-    'js/dist': 'src/assets/js/main.js',
-    'css/dist': 'src/assets/css/style.css'
+const config = {
+  input: {
+    input: ['src/assets/js/main.js'],
+    plugins: [
+      multi({
+        entryFileName: 'js/dist.js'
+      }),
+      nodeResolve({
+        browser: true,
+      }),
+      postcss({
+        extract: 'css/dist.css',
+        minimize: !dev
+      })
+    ]
   },
-  bundle: true,
-  format: 'esm',
-  minify: !dev,
-  watch: dev && {
-    onRebuild (error, result) {
-      if (error) {
-        console.error('Watch build failed:', error)
-      } else {
-        console.log('Watch build succeeded:', result)
-      }
-    },
-  },
-  outdir: 'src/assets'
-})
+  output: {
+    dir: 'src/assets',
+    format: 'es',
+    plugins: [
+      dev || terser()
+    ]
+  }
+}
+
+const bundle = await rollup(config.input)
+await bundle.write(config.output)
+await bundle.close()

@@ -6,20 +6,21 @@
   "type": "module",
   "scripts": {
     "start": "npm run start:prod",
-    "build:dev": "node ./build.js --watch",
-    "build:prod": "node ./build.js",
     "start:dev": "node src/serve.js --open",
     "start:prod": "node src/serve.js"
   },
   "dependencies": {
     "@anticore-contracts/tree-insert": "^2.0.4",
     "@anticore-contracts/tree-view": "^1.0.5",
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "anticore": "^4.6.2",
-    "anticore-server": "^0.10.1",
+    "anticore-server": "^0.14.0",
     "dotenv": "^10.0.0",
-    "esbuild": "^0.12.22",
     "open": "^8.2.1",
-    "install-peers-cli": "^2.2.0"
+    "rollup": "^2.56.3",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "engines": {
     "node": ">=14.x"
