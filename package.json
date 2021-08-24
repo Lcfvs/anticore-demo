@@ -1,18 +1,17 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An anticore demo",
   "type": "module",
   "scripts": {
     "start": "npm run start:prod",
-    "start:dev": "npm run bundle:dev && node src/serve.js --open",
-    "start:prod": "npm run bundle:prod && node src/serve.js",
-    "bundle:all": "npm run bundle:css && npm run bundle:js",
-    "bundle:dev": "npm run bundle:all -- -- --watch",
-    "bundle:prod": "npm run bundle:all -- -- --minify",
-    "bundle:css": "esbuild --bundle --outfile=src/assets/css/dist.css src/assets/css/style.css",
-    "bundle:js": "esbuild --bundle --format=esm --outfile=src/assets/js/dist.js src/assets/js/main.js"
+    "start:dev": "run-p bundle:dev serve:dev",
+    "start:prod": "run-s bundle:prod serve:prod",
+    "serve:dev": "node src/serve.js --open",
+    "serve:prod": "node src/serve.js",
+    "bundle:dev": "node ./build.js --watch",
+    "bundle:prod": "node ./build.js"
   },
   "dependencies": {
     "@anticore-contracts/tree-insert": "^2.0.0",
@@ -23,7 +22,8 @@
     "dotenv": "^10.0.0",
     "fastify": "^3.20.2",
     "fastify-multipart": "^4.0.7",
-    "fastify-static": "^4.2.3"
+    "fastify-static": "^4.2.3",
+    "npm-run-all": "^4.1.5"
   },
   "engines": {
     "node": ">=14.x"
