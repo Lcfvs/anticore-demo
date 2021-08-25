@@ -21,9 +21,18 @@ export default [
       }),
       {
         resolveImportMeta(property, { moduleId }) {
-          const path = pathToFileURL(moduleId).href.replace(href, '')
+          if (property === null || property === 'url') {
+            const path = pathToFileURL(moduleId).href.replace(href, '')
+            const url = `new URL('${path}', globalThis.location).href`
 
-          return `{ url: new URL('${path}', globalThis.location).href }`
+            if (!property) {
+              return `{ url: ${url} }`
+            }
+
+            return url
+          }
+
+          return null
         }
       },
       ...watched ? [] : [terser()]
