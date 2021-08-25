@@ -1,32 +1,33 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "An anticore demo",
   "type": "module",
+  "engines": {
+    "node": ">=14.x"
+  },
   "scripts": {
-    "start": "npm run start:prod",
-    "start:dev": "node src/serve.js --open",
-    "start:prod": "node src/serve.js"
+    "postinstall": "npm run build",
+    "start": "node src/serve.js",
+    "open": "node src/serve.js --open",
+    "build": "rollup -c",
+    "watch": "rollup -cw"
   },
   "dependencies": {
     "@anticore-contracts/tree-insert": "^2.0.4",
     "@anticore-contracts/tree-view": "^1.0.5",
     "anticore": "^4.6.2",
-    "anticore-server": "^0.14.1",
+    "anticore-server": "^0.15.0",
     "dotenv": "^10.0.0"
   },
-  "engines": {
-    "node": ">=14.x"
-  },
   "devDependencies": {
-    "@rollup/plugin-multi-entry": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "eslint": "^7.28.0",
     "rollup": "^2.56.3",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
-    "postcss": "^8.3.6"
+    "npm-run-all": "^4.1.5"
   },
   "author": "Lcf.vs",
   "license": "MIT"

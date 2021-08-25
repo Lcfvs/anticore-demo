@@ -1,4 +1,3 @@
-import '../css/style.css'
 import './contracts/generic/index.js'
 import './contracts/view/index.js'
 import 'anticore/defaults.js'
