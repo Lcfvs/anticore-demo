@@ -30,7 +30,7 @@ form {
   max-width: 40ch;
 }
 
-input {
+form input {
   border: 1px solid silver;
   display: block;
   font-size: 16px;
