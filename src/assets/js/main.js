@@ -1,5 +1,6 @@
-import './contracts/generic/index.js'
-import './contracts/view/index.js'
-import 'anticore/defaults.js'
-import './contracts/tree/index.js'
+import './contracts/generics.js'
+import './contracts/views.js'
+import './contracts/trees.js'
 import 'anticore/trigger.js'
+
+export * from 'anticore'
