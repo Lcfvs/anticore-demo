@@ -1,7 +1,7 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "An anticore demo",
   "type": "module",
   "engines": {
@@ -9,7 +9,6 @@
     "npm": ">=7.x"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "start": "node src/serve.js",
     "open": "node src/serve.js --open",
     "build": "rollup -c",
