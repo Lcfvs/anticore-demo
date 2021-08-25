@@ -3,7 +3,7 @@ import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import { argv } from 'process'
 
-const prod = !argv.includes('-cw')
+const watched = argv.includes('-w')
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
       nodeResolve({
         browser: true
       }),
-      ...prod ? [terser()] : []
+      ...watched ? [] : [terser()]
     ]
   },
   {
@@ -28,7 +28,7 @@ export default [
     plugins: [
       postcss({
         extract: true,
-        minimize: prod
+        minimize: !watched
       })
     ]
   }
