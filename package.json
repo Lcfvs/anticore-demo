@@ -1,12 +1,12 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An anticore demo",
   "type": "module",
   "engines": {
     "node": ">=16.x",
-    "npm": ">=7.21.x"
+    "npm": ">=7.x"
   },
   "scripts": {
     "postinstall": "npm run build",
