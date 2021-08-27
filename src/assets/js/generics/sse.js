@@ -9,7 +9,7 @@ const listen = target => sse(target.dataset.sse)
 const onChange = ({ target }) => {
   if (target.checked) {
     sources.set(target, listen(target))
-  } else {
+  } else if (sources.has(target)) {
     sources.get(target).close()
     sources.delete(target)
   }
