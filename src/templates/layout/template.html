@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{view.description}" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self'; script-src 'self'; img-src 'self'; style-src 'self'; require-trusted-types-for 'script'; trusted-types anticore" />
     <title>{view.title} - anticore-demo</title>
     <link rel="stylesheet" href="/assets/css/dist.css" />
     <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <script src="/assets/js/dist.js" type="module"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@anticore-contracts/tree-insert/on.js": "https://ga.jspm.io/npm:@anticore-contracts/tree-insert@2.0.5/on.js",
+          "@anticore-contracts/tree-view/on.js": "https://ga.jspm.io/npm:@anticore-contracts/tree-view@1.0.5/on.js",
+          "anticore": "https://ga.jspm.io/npm:anticore@4.6.3/index.js",
+          "anticore/defaults.js": "https://ga.jspm.io/npm:anticore@4.6.3/defaults.js",
+          "anticore/trigger.js": "https://ga.jspm.io/npm:anticore@4.6.3/trigger.js",
+          "/assets/js/dist.js": "/assets/js/main.js"
+        }
+      }
+    </script>
+    <script src="/assets/js/es-pim.js" type="module"></script>
   </head>
   <body>
     <header>

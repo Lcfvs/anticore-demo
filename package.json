@@ -1,7 +1,7 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "An anticore demo",
   "type": "module",
   "engines": {
@@ -15,10 +15,10 @@
     "watch": "npm run build -- -w"
   },
   "dependencies": {
-    "@anticore-contracts/tree-insert": "^2.0.4",
+    "@anticore-contracts/tree-insert": "^2.0.5",
     "@anticore-contracts/tree-view": "^1.0.5",
-    "anticore": "^4.6.2",
-    "anticore-server": "^0.16.0",
+    "anticore": "^4.6.3",
+    "anticore-server": "^0.16.1",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
