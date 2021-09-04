@@ -8,18 +8,7 @@
     <title>{view.title} - anticore-demo</title>
     <link rel="stylesheet" href="/assets/css/dist.css" />
     <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <script type="importmap">
-      {
-        "imports": {
-          "@anticore-contracts/tree-insert/on.js": "https://ga.jspm.io/npm:@anticore-contracts/tree-insert@2.0.5/on.js",
-          "@anticore-contracts/tree-view/on.js": "https://ga.jspm.io/npm:@anticore-contracts/tree-view@1.0.5/on.js",
-          "anticore": "https://ga.jspm.io/npm:anticore@4.6.3/index.js",
-          "anticore/defaults.js": "https://ga.jspm.io/npm:anticore@4.6.3/defaults.js",
-          "anticore/trigger.js": "https://ga.jspm.io/npm:anticore@4.6.3/trigger.js",
-          "/assets/js/dist.js": "/assets/js/main.js"
-        }
-      }
-    </script>
+    <script type="importmap">{importmap}</script>
     <script type="module">import '/assets/js/dist.js'</script>
   </head>
   <body>
