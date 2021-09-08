@@ -23,6 +23,18 @@ Alternatively, you can simply make [your own the Glitch project](https://glitch.
 
 ## The demo architecture
 
+### Preamble
+
+If you don't know how `anticore` is working, maybe read the [brief explanation](https://github.com/Lcfvs/anticore#a-brief-explanation) and the first following demo **to learn the library basics**, it really often helps the beginners.
+
+In short, the following jumps can also be useful to understand the most used features:
+ * [The contract anatomy](https://github.com/Lcfvs/anticore#contract-anatomy)
+ * [The `on()`](https://github.com/Lcfvs/anticore#on)
+ * [The `when()`](https://github.com/Lcfvs/anticore#when)
+ * [The `defaults()`](https://github.com/Lcfvs/anticore#defaults)
+ * [The `trigger()`](https://github.com/Lcfvs/anticore#trigger)
+
+
 ### The front
 
 You can find it into the [`./src/assets`](./src/assets)
@@ -40,7 +52,7 @@ The JS part is divided like this (but you can choose the structure you want, it'
    In order, it imports the `generics`, the `views`, the `trees`, then the `anticore/trigger.js`
    **You're strongly encouraged to preserve that order to keep your front optimized**
 
-### External references
+### The backend/ops
 
 * For the server-side things, read the `anticore-server` readme
 * To see how to install/uninstall some dependencies, read the `jspmi` one
