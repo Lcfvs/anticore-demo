@@ -1,0 +1,10 @@
+{
+  "installer": "npm",
+  "map": "production.importmap",
+  "locals": {
+    "/assets/js/dist.js": "/assets/js/main.js"
+  },
+  "settings": {
+    "env": ["production", "browser"]
+  }
+}

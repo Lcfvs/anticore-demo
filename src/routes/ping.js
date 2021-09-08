@@ -1,8 +1,7 @@
+import { setTimeout } from 'timers/promises'
 import app from '../lib/app.js'
 import { sse } from '../lib/responder.js'
 import ping from '../templates/sse/ping/ping.js'
-
-const wait = async delay => new Promise(resolve => setTimeout(resolve, delay))
 
 app.get('/ping', async (request, reply) => {
   const event = sse(reply)
@@ -14,6 +13,6 @@ app.get('/ping', async (request, reply) => {
   while (!reply.raw.writableEnded) {
     data.counter += 1
     await event('ping', data.counter, ping, { data })
-    await wait(1000)
+    await setTimeout(1000)
   }
 })

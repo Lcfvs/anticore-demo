@@ -3,8 +3,11 @@ import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import { argv } from 'process'
 import { pathToFileURL } from 'url'
+import jspmRollup from 'rollup-plugin-jspm'
 
-const { href } = pathToFileURL('src')
+const url = pathToFileURL('src')
+
+const { href } = url
 
 const watched = argv.includes('-w')
 
@@ -35,6 +38,13 @@ export default [
           return null
         }
       },
+      jspmRollup({
+        basePath: url, // defaults to process.cwd()
+        env: {
+          browser: true,
+          node: false
+        }
+      }),
       ...watched ? [] : [terser()]
     ]
   },
