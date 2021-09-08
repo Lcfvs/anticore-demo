@@ -1,7 +1,7 @@
 {
   "name": "anticore-demo",
   "private": true,
-  "version": "1.2.14",
+  "version": "1.2.15",
   "description": "An anticore demo",
   "type": "module",
   "engines": {
@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.4",
-    "@web/rollup-plugin-import-meta-assets": "^1.0.7",
     "eslint": "^7.28.0",
     "postcss": "^8.3.6",
     "rollup": "^2.56.3",
