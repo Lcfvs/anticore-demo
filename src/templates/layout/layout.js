@@ -1,10 +1,10 @@
 import { readFile } from 'fs/promises'
-import template from '../../lib/template.js'
+import { load } from '../../lib/renderer.js'
 import ping from '../sse/ping/ping.js'
 
 const importmap = `${await readFile('./production.importmap')}`
 
-export default await template(import.meta, {
+export default await load(import.meta, {}, {
   importmap,
   ping,
   view: null

@@ -1,5 +1,5 @@
-import template from '../../lib/template.js'
+import { load } from '../../lib/renderer.js'
 
-export default await template(import.meta, {
+export default await load(import.meta, {}, {
   view: null
 })
